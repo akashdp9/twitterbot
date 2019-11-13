@@ -1,6 +1,15 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.contrib import admin
 
-# Register your models here.
+from .models import *
+
+
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('user_name','email',)
+
+
+class TweetAdmin(admin.ModelAdmin):
+    list_display = ('post','user_name','update_post','delete_post')
+
+
+admin.site.register(User, UserAdmin)
+admin.site.register(Tweet, TweetAdmin)
