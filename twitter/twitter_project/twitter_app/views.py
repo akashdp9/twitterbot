@@ -76,7 +76,7 @@ def api_create_tweet_view(request):
             return Response(serializer.data)
         return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
 
-    
+
 @api_view(['PUT', ])
 def api_update_tweet_view(request, id):
     try:
